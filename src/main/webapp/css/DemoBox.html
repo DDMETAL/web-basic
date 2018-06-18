@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Box</title>
+<style>
+	div{
+		border:1px solid red;
+		widht:100px;
+		height: 100px;
+	}
+	/*给四个边设置相同的边距*/
+	#d1{
+		padding:20px;
+		margin:40px;
+	}
+	#d2{
+	/*顺序：      上   右   下   左*/
+		padding:10px 20px 30px 40px;
+		margin:4opx 30px 20px 10px;
+	}
+	/*给单个边设置边距*/
+	#d3{
+		padding-left:20px;
+		margin-bottom:30px;
+	}
+	/*对称设置边距*/
+	#d4{
+		/*       上下  左右*/
+		padding:20px 40px;
+		margin:30px 50px;
+	}
+	/*对称设置外边距的特例，当左右为auto时，元素会水平居中*/
+	#d5{
+		margin: 40px auto;
+	}
+</style>
+</head>
+<body>
+	<div id="d0">d0</div>
+	<div id="d1">d1</div>
+	<div id="d2">d2</div>
+	<div id="d3">d3</div>
+	<div id="d4">d4</div>
+	<div id="d5">d5</div>
+</body>
+</html>

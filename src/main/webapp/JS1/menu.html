@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>联动菜单</title>
+<script>
+	var colleges;
+	//页面加载后
+	window.onload=function(){
+		//模拟查询所有城市
+		colleges=[
+			["北京大学","清华大学","中国人民大学"],
+			["西安交通大学","西安电子科技大学","西安工业大学"],
+			["上海交通大学","复旦大学","同济大学"]
+		];
+	} 
+	function chg(){
+		//获取地区
+		var city=document.getElementById("city");
+		var index=city.value;
+		console.log(index);
+		//获取地区所对应学校
+		var ccolleges=colleges[index];
+		//删除旧的学校
+		var college=document.getElementById("college");
+		//var options=
+		//	college.getElementsByTagName("option");
+		//for(var i=options.length-1;i>0;i--){
+		//	college.removeChild(options[i]);
+		//}
+		college.innerHTML="<option>请选择</option>";
+		//追加新的学校
+		if(ccolleges){
+			for(var i=0;i<ccolleges.length;i++){
+				var option=document.createElement("option");
+				option.innerHTML=ccolleges[i];
+				college.appendChild(option);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	省：
+	<select onchange="chg();" id="city">
+		<option value="-1">请选择</option>
+		<option value="0">北京</option>
+		<option value="1">西安</option>
+		<option value="2">上海</option>
+	</select>
+	市：
+	<select id="college">
+		<option>请选择</option>
+	</select>
+</body>
+</html>

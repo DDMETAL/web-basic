@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单</title>
+</head>
+<body>
+	<!-- 表单：用来输入数据发送数据的元素 -->
+	<!-- 表单元素：用来生命表单范围，只有在此范围内的空间中的数据才能发送给服务器 -->
+	<form action="https://www.baidu.com">
+		<!-- 表单控件：用来输入数据 -->
+		<!-- input元素（9个）和其他元素（3个） -->
+		<p>
+			<!--       类型		   默认值 		 最大长度		    只读-->
+			账号:<input type="text" value="dmetal" maxlength="10" readonly/>
+		</p>
+		<p>
+			<!-- 同上 -->
+			密码:<input type="password"/>
+		</p>
+		<p>
+			<!-- name:组名，同一组radio互斥,checked:默认选中 value:文本-->
+			性别:
+			<input type="radio" name="sex" checked/>男 
+			<input type="radio" name="sex"/>女
+		</p>
+		<P>
+			<!-- checked：默认选中, name,value-->
+			兴趣:
+			<input type="checkbox" checked/>音乐
+			<input type="checkbox" checked/>足球
+			<input type="checkbox"/>唱歌
+			<input type="checkbox"/>旅游	
+		</P>
+		<p>
+			<input type="hidden" value="DDD"/>
+		</p>
+		<p>
+			头像:
+			<input type="file"/>
+		</p>
+			<input type="submit" value="注册"/>
+			<input type="reset"  value="重置"/>
+			<input type="button" value="测试"/>
+		<!-- label用来管理表单中的文本，将文本与空间绑定到一起，增加控件可点击范围 -->
+		<p>
+			<input type="checkbox" id="c1"/>
+			<label for="c1">我已阅读并自愿遵守协议!</label>
+		</p>
+		<!-- 下拉选 适合选项多时  selected:默认选中 value-->
+		<p>
+			<select>
+				<option>请选择</option>
+				<option>北京</option>
+				<option>上海</option>
+				<option>深圳</option>
+				<option selected>杭州</option>
+				<option>西安</option>
+			</select>
+		</p>
+		<!-- cols宽度，rows高度，双标签中间的内容为默认值 -->
+		<p>
+			简介:
+			<textarea rows="5" cols="30">初学者</textarea>
+		</p>
+	</form>
+</body>
+</html>

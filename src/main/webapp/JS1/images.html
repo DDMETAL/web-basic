@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图片轮换</title>
+<style>
+	div{
+		border:1px solid red;
+		width:218px;
+		height:218px;
+	}
+	.hide{
+		display:none;
+	}
+</style>
+<script>
+	//页面加载后
+	window.onload=function(){
+		start();
+	}
+	var id=null;
+	//轮播次数
+	var n=0;
+	function start(){
+		//启动定时器，每2s轮播图片
+		id=setInterval(function(){
+			n++;
+			//获取所有图片
+			var imgs=document.getElementsByTagName("img");
+			//将它们都隐藏
+			for(var i=0;i<imgs.length;i++){
+				imgs[i].className="hide";
+			}
+			//将下一个图片显示
+			var index=n%imgs.length;
+			imgs[index].className="";
+			
+			
+		},2000);
+	}
+	function stop(){
+		clearInterval(id);
+	}
+</script>
+</head>
+<body>
+	<div onmouseover="stop();" onmouseout="start();">
+		<img alt="1" src="../images/a.png"/>
+		<img alt="2" src="../images/b.png" class="hide"/>
+		<img alt="3" src="../images/c.png" class="hide"/>
+		<img alt="4" src="../images/d.png" class="hide"/>	
+	</div>
+</body>
+</html>

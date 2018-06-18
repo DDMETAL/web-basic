@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>选择器</title>
+<style>
+	/*类选择器 选择class=某值的所有元素*/
+	.good{
+		color:blue;
+	}
+	/*id选择器 选择id=某指的唯一元素*/
+	#media{
+		color:red;
+	}
+	/*选择器组 写出一组选择器，可以选中每个选择器岁对应的目标的并集*/
+	.good,#media{
+		font-weight:bold;
+	}
+	/*派生选择器*/
+	/*①后代选择器*/
+	#address b{
+		color:red;
+	}
+	/*②子元素选择器*/
+	#address>b{
+		font-size:30px;
+	}
+	/*伪类选择器*/
+	a:link{
+		color:green;
+	}
+	a:visited{
+		color:red;
+	}
+	#btn1:active{
+		background-color:yellow;
+	}
+	#t1:focus{
+		background-color:pink;
+	}
+	img:hover{
+		width:192px;
+		height:192px;	
+	}
+</style>
+</head>
+<body>
+	<p class="good">电脑</p>
+	<p>网络</p>
+	<p class="good">相机</p>
+	<p id="media">媒体</p>
+	<p id="address">
+		<u>陕西省<b>西安市</b></u>临潼区<b>陕鼓大道</b>48号西安科技大学
+	</p>
+	
+	<p>
+		<a href="https://www.baidu.com">baidu</a>
+		<a href="https://www.goole.com">google</a>
+		<a href="https://www.youtube.com">youtube</a>
+		<a href="https://www.niconico.com">nico</a>
+	</p>
+	<p>
+		<input type="button" value="激活" id="btn1"/>
+	</p>
+	<p>
+		<input type="text" id="t1"/>
+	</p>
+	<p>
+		<img src="../images/a.png"/>
+	</p>
+	
+</body>
+</html>

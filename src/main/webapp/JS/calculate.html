@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>计算平方/阶乘</title>
+<script>
+	/*获取文本框内的指；2判断是否为数字；3是：计算平方并写入span，否:将提示信息写入span*/
+	function sq(){
+		var n=document.getElementById("num").value;
+		var span=document.getElementById("result");
+		if(isNaN(n)){
+			span.innerHTML="请输入正确的数字";
+		}else{
+			var sq=n*n;
+			span.innerHTML=sq;
+		}
+	}
+	function jc(){
+		var n=document.getElementById("jie").value;
+		var span=document.getElementById("jcheng");
+		if(isNaN(n)){
+			span.innerHTML="请输入正确的数字";
+		}else if(n<0){
+			span.innerHTML="负数没有阶乘";
+		}else if(n==0){
+			span.innerHTML=1;
+		}else{
+			var res=1;
+			for(var i=1;i<=n;i++){
+				 res*=i;
+			}
+			span.innerHTML=res;
+		}
+	}
+	function calcul\ate(){
+		//获取文本框
+		var input=document.getElementById("jsq");
+		//获取框内算式
+		var text=input.value;
+		try {
+			input.value=eval(text);
+		} catch (e) {
+			input.value="Error";
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+	<p>平方
+		<input type="text"  id="num"/>
+		<input type="button" value="平方" onclick="sq();"/>
+		=<span id="result"></span>
+	</p>
+	<p>阶乘
+		<input type="text" id="jie"/>
+		<input type="button" value="阶乘" onclick="jc();"/>
+		=<span id="jcheng"></span>
+	</p>
+	<p>计算器
+		<input type="text" id="jsq"/>
+		<input type="button" value="=" onclick="calculate();"/>
+	</p>
+	
+</body>
+</html>

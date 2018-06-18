@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登陆</title>
+<style >
+ .ok{
+ 	color:green;
+ }
+ .error{
+ 	color:red;
+ }
+ .d1{
+ 	border: 1px solid red;
+ 	text-align: center;
+ 	}
+</style>
+<script>
+	//检查账号的格式
+	function checkCode(){
+		console.log(1111);
+		//获取账号
+		var account=document.getElementById("code").value;
+		
+		//获取span
+		var span=document.getElementById("code_msg");
+		
+		var reg=/^\w{5,10}$/;
+		
+		if(reg.test(account)){
+			span.className="ok";
+			return true;
+		}else{
+			span.className="error";
+			return false;
+		}
+		
+	}
+	function checkPsw(){
+		var password=document.getElementById("psw").value;
+		var span=document.getElementById("psw_msg");
+		var reg=/^\w{8,16}$/;
+		if(reg.test(password)){
+			span.className="ok";
+			return true;
+		}else{
+			span.className="error";
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="d1">
+			<!-- 在js中任何数据都能当条件，但此处是返回值，所以必须返回false时才能取消事件，返回其他空值无法代替false -->
+		<form action="https://www.baidu.com" onsubmit="return checkCode()+checkPsw()==2;">
+			<p>账号
+				<input type="text" onblur="checkCode();" id="code"/>
+				<span id="code_msg">5-10位字母，数字，下划线</span>
+			</p>
+			<p>密码
+				<input type="password" onblur="checkPsw();" id="psw"/>
+				<span id="psw_msg">8-16位字母，数字，下划线</span>
+			</p>
+			<p>
+				<input type="submit" value="登陆" />
+			</p>
+		</form>
+	</div>
+</body>
+</html>

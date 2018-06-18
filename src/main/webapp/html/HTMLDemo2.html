@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>分区元素块元素与行内元素</title>
+</head>
+	<body>
+		<!-- logo -->
+		<div>
+			<p>这里一张logo图片</p>
+		</div>
+		<!-- 内容区 -->
+		<div style="color:red;">
+			<h1>BABYMETAL</h1>
+			<!-- 锚点使用 -->
+			<p><a href="#gedan">BABYMETAL是日本偶像金属团</a></p>
+			<p>成员包括SUMETAL,MOAMETAL,YUIMETAL</p>
+		</div>
+		<!-- 版权 -->
+		<div>
+			<p>版权所有，盗版必究</p>
+		</div>
+		<!-- 行内元素 -->
+		<p>
+			陕西省<u>西安市</u><b>临潼区</b><span style="color:red">陕鼓大道48号</span>西安科技大学
+		</p>
+		<p>
+			
+			星期一&nbsp;&nbsp;&nbsp;星期二<br>
+			星期三&nbsp;&nbsp;&nbsp;星期四<br>
+			星期五&nbsp;&nbsp;&nbsp;星期六<br>
+			星期日
+		</p>
+		<!-- 图像元素 -->
+		<!-- 绝对路径：从盘符开始写出图片的完整路径， -->
+		<!-- 相对路径：只需写出图片和网页的相对关系 -->
+		<p>
+			<!-- 图片和网页平级 -->
+			<img src="a.png"/>
+			<!-- 图片在网页下级 -->
+			<img src="i/b.png"/>
+			<!-- 图片在网页上级 -->
+			<img src="../c.png"/>
+			<img src="../images/d.png">
+		</p>
+		<!-- 超链接 -->
+		<!-- 常规写法 -->
+		<p>
+			<a href="https://www.baidu.com">baidu</a>
+			<a href="https://www.bilibili.com" target="_blank">b站</a>			
+		</p>
+		<!-- 锚点 -->
+		<!-- 将此位置做成锚点 -->
+		<p>
+			<a name="gedan">红</a>月，空手道，巧克力，欺凌、绝对、不行。
+		</p>
+		<!-- 网页丁目默认为锚点 -->
+		<p>
+			<a href="#">顶部</a>
+		</p>
+		<!-- 表格 -->
+		<!-- 基本用法 -->
+		<table border="1" cellspacing="0" width="20%">
+			<tr>
+				<td>一行一列</td>
+				<td>一行二列</td>
+			</tr>
+			<tr>
+				<td>二行一列</td>
+				<td>二行二列</td>
+			</tr>	
+		</table>
+		<!-- 跨行与跨列 -->
+		<!-- 跨列 -->
+		<table border="1" cellspacing="0" width="20%">
+			<tr>
+				<td colspan="2">一行一列</td>
+				<!-- <td>一行二列</td> -->
+			</tr>
+			<tr>
+				<td>二行一列</td>
+				<td>二行二列</td>
+			</tr>	
+		</table>
+		<!-- 跨行 -->
+		<table border="1" cellspacing="0" width="20%">
+			<tr>
+				<td rowspan="2">一行一列</td>
+				<td>一行二列</td>
+			</tr>
+			<tr>
+				<!-- <td>二行一列</td> -->
+				<td>二行二列</td>
+			</tr>	
+		</table>
+		<!-- 行分组 -->
+		<table border="1" cellspacing="0" width="30%">
+			<thead>
+				<tr>
+					<td>编号</td>
+					<td>名称</td>
+					<td>价格</td>
+				<tr>
+			</thead>
+			<tbody style="color:red">
+				<tr>
+					<td>01</td>
+					<td>Tokyo</td>
+					<td>3500</td>
+				</tr>
+				<tr>
+					<td>02</td>
+					<td>NewYork</td>
+					<td>3500</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2">合计</td>
+					<td>7000</td>
+					
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+</html>

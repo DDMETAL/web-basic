@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>时钟/邮件发送</title>
+</head>
+<script>
+	var id;
+	function start(){
+		if(id){
+			//若ID非空，则说明定时器已启动，此时就不要在重复启动定时器了
+			return;
+		}
+		id=setInterval(function(){
+			var now=new Date();
+			var time=now.toLocaleTimeString();
+			var p=document.getElementById("clock");
+			p.innerHTML=time;
+		},1000);
+	}
+	function stop(){
+		clearInterval(id);
+		//清空ID以便于下一次开始
+		id=null;
+	}
+	var id1;
+	function send(){
+		if(id1){
+			return;
+		}
+		id1=setTimeout(function(){
+		var p=document.getElementById("email");
+			p.innerHTML="正在发送";
+		},3000);
+		
+	}
+	function cancle(){
+		clearTimeout(id1);
+		id1=null;
+		var p=document.getElementById("email");
+		p.innerHTML="已撤回";
+		
+	}
+</script>
+<style>
+	div{
+		border: 1px solid red;
+		text-align:center;
+	}
+	p{
+		border:1px solid pink;
+		width:200px;
+		height:30px;
+		line-height:30px;
+		text-align:center;
+		font-size:20px;
+		margin:auto;
+		margin-top:50px;
+		margin-bottom:50px;
+	}
+</style>
+<body>
+	<div class="d1">
+		<p id="clock"></p>
+		<input type="button" value="开始" onclick="start();"/>
+		<input type="button" value="停止" onclick="stop();"/>
+	</div>
+	<div class="d2">
+		<input type="button" value="发送" onclick="send();"/>
+		<input type="button" value="撤回" onclick="cancle();"/>
+		<p id="email"></p>
+		
+	</div>
+</body>
+</html>

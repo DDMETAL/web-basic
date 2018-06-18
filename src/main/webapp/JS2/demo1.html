@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>自定义对象</title>
+<script>
+	//采用直接量的方式创建对象
+	function f1(){
+		var emp={"name":"zhangsan",
+					  "age":"21",
+					  "work":function(){
+						  alert("java开发");
+						  },
+					  "email":"ddd@dmetal.com"		
+		};
+		alert(emp.name);
+		alert(emp.age);
+		emp.work();
+	}
+	//采用内置构造器创建对象
+	function f2(){
+		var teacher=new Object();
+		teacher.name="lisi";
+		teacher.age=18;
+		teacher.work=function(){
+			alert("c++开发");
+		}
+		alert(teacher.name);
+		alert(teacher.age);
+		teacher.work();
+	}
+	//自定义构造器
+	function Coder(name,age,work){
+		this.name=name;
+		this.age=age;
+		//this指当前对象，.job是给当前对象增加一个属性，=work是给这个属性赋值
+		this.job=work;
+	}
+	function f3(){
+		var coder=new Coder(
+				"wangwu",
+				28,
+				function(){
+					alert("c#");
+		});
+		alert(coder.name);
+		alert(coder.age);
+		coder.job();
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="直接量" onclick="f1();"/>
+	<input type="button" value="内置构造器" onclick="f2();"/>
+	<input type="button" value="自定义构造器" onclick="f3();"/>
+</body>
+</html>

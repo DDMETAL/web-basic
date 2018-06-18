@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS三种书写方式及基本语法和数据类型</title>
+<!-- 嵌入式，在<script>标签之内书写js
+	该标签可以写在网页的任意位置 -->
+<script>
+	//1.js中函数都是公有的;2.js中的函数可以有返回值，但不需声明类型
+	function b2(){
+		alert("222");
+	}
+	/*将js封装成函数，则该函数是在页面加载完成后，用户点击h时调用的
+	  直接书写js的逻辑，该逻辑在页面加载时就调用，甚至比body还早*/
+	alert("444");
+	//控制台输出
+	console.log("控制台打印");
+	//1.声明变量
+	var x;
+	console.log(x);
+	var y=1;
+	console.log(y);
+	//2.数据类型
+	var s="hello";
+	var n=3.14;
+	var b=true;
+	//3.隐式转换
+	console.log(s+n);
+	console.log(s+b);
+	console.log(n+b);
+	console.log(b+b);
+	//4.数据类型相关函数
+	console.log(parseInt(3.14));
+	console.log(parseInt("3.14"));
+	console.log(parseInt("abc"));
+	console.log(typeof(6));
+	console.log(isNaN(3.14));
+	console.log(isNaN("3.14"));
+	console.log(isNaN("a3.14"));
+	console.log(isNaN("abc"));	
+	console.log(isNaN(""));//false
+	console.log((parseInt("")));//NaN
+	//5.运算符
+	var a=1;
+	var b="1";
+	console.log(a==b);
+	console.log(a===b);
+	//6.条件表达式
+	//js中允许使用任何值做条件，当该值是非布尔值时，如它是空值，则相当月false。简化了条件表达式
+	var k="hi";
+	if(k){
+		console.log("k不是空值");
+	}else{
+		console.log("k是空值");
+	}
+	var h=9;
+	h && console.log("非空");
+</script>
+<!-- 文件调用式，在单独的js文件书写js -->
+<script type="text/javascript" src="myjs.js"></script>
+</head>
+<body>
+	<!-- 事件：用JS触发的时机/用户的操作 -->
+		<!-- 1.事件定义式，在定义事件时直接书写js -->
+	<input type="button" value="1" onclick="alert('111');"/>
+	<input type="button" value="2" onclick="b2()"/>
+	<input type="button" value="3" onclick="b3()"/>
+	<p>js基本语法</p>
+</body>
+</html>
